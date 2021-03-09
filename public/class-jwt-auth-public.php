@@ -75,13 +75,13 @@ class Jwt_Auth_Public
         register_rest_route($this->namespace, 'token', array(
             'methods' => 'POST',
             'callback' => array($this, 'generate_token'),
-            'register_rest_route' => '__return_true',
+            'permission_callback' => '__return_true',
         ));
 
         register_rest_route($this->namespace, 'token/validate', array(
             'methods' => 'POST',
             'callback' => array($this, 'validate_token'),
-            'register_rest_route' => '__return_true',
+            'permission_callback' => '__return_true',
         ));
     }
 
